@@ -135,7 +135,7 @@ struct SystemColorViewModel: Identifiable, Hashable {
             } else if name.lowercased().contains("label") {
                 return style == .light ? .white: .black
             } else if name.contains("Fill") {
-                return style == .light ? .black : .white
+                return style == .light ? .white : .black
             } else if name.lowercased().contains("separator") {
                 return style == .light ? .black : .white
             } else {
