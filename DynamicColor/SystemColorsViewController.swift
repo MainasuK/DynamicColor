@@ -63,6 +63,8 @@ extension SystemColorsViewController {
         view.addSubview(collectionView)
         collectionView.dataSource = dataSource
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "paintbrush"), style: .plain, target: self, action: #selector(SystemColorsViewController.paintBrushBarButtonItemPressed(_:)))
+
         var snapshot = NSDiffableDataSourceSnapshot<Section, SystemColorViewModel>()
 
         snapshot.appendSections([.color])
@@ -102,6 +104,36 @@ extension SystemColorsViewController {
         snapshot.appendItems(separatorItems)
 
         dataSource.apply(snapshot)
+    }
+
+    @objc private func paintBrushBarButtonItemPressed(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Background Color", message: nil, preferredStyle: .actionSheet)
+        let colors: [UIColor] = [.systemRed, .systemOrange, .systemYellow, .systemGreen, .systemTeal, .systemBlue, .systemIndigo, .systemPurple, .systemPink] + [.systemBackground, .secondarySystemBackground, .tertiarySystemGroupedBackground]
+        let actions = colors.map { color -> UIAlertAction in
+            let title: String = {
+                guard NSStringFromClass(type(of: color)) == "UIDynamicSystemColor",
+                let isDynamic = color.value(forKey: "_isDynamic") as? Bool, isDynamic,
+                let systemColorName = color.value(forKey: "systemColorName") as? String else {
+                    return "Custom"
+                }
+
+                return systemColorName
+            }()
+            let alertAction = UIAlertAction(title: title, style: .default) { _ in
+                self.collectionView.backgroundColor = color
+            }
+            return alertAction
+        }
+
+        for action in actions {
+            alertController.addAction(action)
+        }
+
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.barButtonItem = sender
+        }
+
+        present(alertController, animated: true, completion: nil)
     }
 
 }
