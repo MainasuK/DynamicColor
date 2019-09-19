@@ -10,42 +10,24 @@ import UIKit
 
 final class RootViewController: UIViewController {
 
+    let nestTabBarController = UITabBarController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let lightModeViewController = ViewController()
-        let darkModeViewController = ViewController()
-        if #available(iOS 13.0, *) {
-            lightModeViewController.overrideUserInterfaceStyle = .light
-            darkModeViewController.overrideUserInterfaceStyle = .dark
-            lightModeViewController.label.text = "Light Mode"
-            darkModeViewController.label.text = "Dark Mode"
-        } else {
-            lightModeViewController.label.text = "Light Mode"
-            darkModeViewController.label.text = "Light Mode"
-        }
-
-        lightModeViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        addChild(lightModeViewController)
-        view.addSubview(lightModeViewController.view)
+        nestTabBarController.view.translatesAutoresizingMaskIntoConstraints = false
+        addChild(nestTabBarController)
+        view.addSubview(nestTabBarController.view)
         NSLayoutConstraint.activate([
-            lightModeViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
-            lightModeViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            lightModeViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            lightModeViewController.view.bottomAnchor.constraint(equalTo: view.centerYAnchor),
+            nestTabBarController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            nestTabBarController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            nestTabBarController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            nestTabBarController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
-        lightModeViewController.didMove(toParent: self)
+        nestTabBarController.didMove(toParent: self)
 
-        darkModeViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        addChild(darkModeViewController)
-        view.addSubview(darkModeViewController.view)
-        NSLayoutConstraint.activate([
-            darkModeViewController.view.topAnchor.constraint(equalTo: view.centerYAnchor),
-            darkModeViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            darkModeViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            darkModeViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        ])
-        darkModeViewController.didMove(toParent: self)
+        nestTabBarController.viewControllers = [SystemColorsViewController()]
+            .map { UINavigationController(rootViewController: $0) }
     }
 
 }

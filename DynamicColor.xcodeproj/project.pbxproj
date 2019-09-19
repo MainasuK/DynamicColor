@@ -7,26 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB3CE58D2333349A00A0601D /* SystemColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3CE58C2333349A00A0601D /* SystemColorsViewController.swift */; };
 		DBF6B2BC232F86FF008F83AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF6B2BB232F86FF008F83AE /* AppDelegate.swift */; };
 		DBF6B2BE232F86FF008F83AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF6B2BD232F86FF008F83AE /* SceneDelegate.swift */; };
-		DBF6B2C0232F86FF008F83AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF6B2BF232F86FF008F83AE /* ViewController.swift */; };
 		DBF6B2C3232F86FF008F83AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF6B2C1232F86FF008F83AE /* Main.storyboard */; };
 		DBF6B2C5232F86FF008F83AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBF6B2C4232F86FF008F83AE /* Assets.xcassets */; };
 		DBF6B2C8232F86FF008F83AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF6B2C6232F86FF008F83AE /* LaunchScreen.storyboard */; };
-		DBF6B2D0232F870E008F83AE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF6B2CF232F870E008F83AE /* UIColor.swift */; };
 		DBF6B2D2232F8E37008F83AE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF6B2D1232F8E37008F83AE /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB3CE58C2333349A00A0601D /* SystemColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemColorsViewController.swift; sourceTree = "<group>"; };
 		DBF6B2B8232F86FF008F83AE /* DynamicColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF6B2BB232F86FF008F83AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBF6B2BD232F86FF008F83AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DBF6B2BF232F86FF008F83AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DBF6B2C2232F86FF008F83AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DBF6B2C4232F86FF008F83AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBF6B2C7232F86FF008F83AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBF6B2C9232F86FF008F83AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DBF6B2CF232F870E008F83AE /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		DBF6B2D1232F8E37008F83AE /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,11 +58,10 @@
 		DBF6B2BA232F86FF008F83AE /* DynamicColor */ = {
 			isa = PBXGroup;
 			children = (
-				DBF6B2CF232F870E008F83AE /* UIColor.swift */,
 				DBF6B2BB232F86FF008F83AE /* AppDelegate.swift */,
 				DBF6B2BD232F86FF008F83AE /* SceneDelegate.swift */,
-				DBF6B2BF232F86FF008F83AE /* ViewController.swift */,
 				DBF6B2D1232F8E37008F83AE /* RootViewController.swift */,
+				DB3CE58C2333349A00A0601D /* SystemColorsViewController.swift */,
 				DBF6B2C1232F86FF008F83AE /* Main.storyboard */,
 				DBF6B2C4232F86FF008F83AE /* Assets.xcassets */,
 				DBF6B2C6232F86FF008F83AE /* LaunchScreen.storyboard */,
@@ -145,8 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBF6B2D2232F8E37008F83AE /* RootViewController.swift in Sources */,
-				DBF6B2C0232F86FF008F83AE /* ViewController.swift in Sources */,
-				DBF6B2D0232F870E008F83AE /* UIColor.swift in Sources */,
+				DB3CE58D2333349A00A0601D /* SystemColorsViewController.swift in Sources */,
 				DBF6B2BC232F86FF008F83AE /* AppDelegate.swift in Sources */,
 				DBF6B2BE232F86FF008F83AE /* SceneDelegate.swift in Sources */,
 			);
@@ -224,7 +220,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -278,7 +274,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
